@@ -13,7 +13,7 @@ const RegisterScreen = ({ navigation }) => {
     const [confirmPassword, setConfirmPassword] = useState({ value: '', error: '' });
 
     const onSend = () => {
-        
+        navigation.navigate('Dashboard', { screen: 'Home' });
     }
 
     return (
@@ -58,6 +58,7 @@ const RegisterScreen = ({ navigation }) => {
             <View style={styles.rowBtn}>
                 <Button
                     mode="contained"
+                    onPress={onSend}
                 >
                     Criar Conta
                 </Button>
@@ -65,7 +66,7 @@ const RegisterScreen = ({ navigation }) => {
 
             <View style={{ flexDirection: 'row', marginVertical: 12 }} >
                 <Text>Já tem uma conta? </Text>
-                <TouchableOpacity onPress={() => { navigation.navigate('Register'); }}>
+                <TouchableOpacity onPress={() => { navigation.navigate('Login'); }}>
                     <Text style={styles.link}>Entrar</Text>
                 </TouchableOpacity>
             </View>

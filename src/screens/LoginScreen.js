@@ -11,7 +11,7 @@ const LoginScreen = ({ navigation }) => {
     const [password, setPassword] = useState({ value: '', error: '' });
 
     const onSend = () => {
-        
+        navigation.navigate('Dashboard', { screen: 'Home' });
     }
 
     return (
@@ -44,6 +44,7 @@ const LoginScreen = ({ navigation }) => {
             <View style={styles.rowBtn}>
                 <Button
                     mode="contained"
+                    onPress={onSend}
                 >
                     Entrar
                 </Button>
