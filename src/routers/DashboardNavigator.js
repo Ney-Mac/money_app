@@ -3,6 +3,7 @@ import HomeScreen from "../screens/HomeScreen";
 import WinsScreen from "../screens/WinsScreen";
 import TransferirScreen from "../screens/TransferirScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import SetPasswordScreen from "../screens/SetPasswordScreen";
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -46,6 +47,15 @@ const DashboardNavigator = ({ navigation }) => {
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="account" size={24} color={color} />
                     )
+                }}
+            />
+            <Tab.Screen 
+                name="Alterar Senha"
+                component={SetPasswordScreen}
+                options={{
+                    tabBarItemStyle: {
+                        display: 'none'
+                    }
                 }}
             />
         </Tab.Navigator>
