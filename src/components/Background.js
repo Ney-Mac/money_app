@@ -8,19 +8,19 @@ import {
 import { theme } from "../themes/theme";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 
-export const Background = ({ children }) => {
+export const Background = ({ children, style }) => {
     return (
         <Pressable style={styles.pressable} onPress={Keyboard.dismiss}>
-            <KeyboardAvoidingView style={styles.container} behavior="height">
+            <KeyboardAvoidingView style={{ ...styles.container, ...style }} behavior="height">
                 {children}
             </KeyboardAvoidingView>
         </Pressable>
     )
 }
 
-export const HomeBackground = ({ children }) => {
+export const HomeBackground = ({ children, style }) => {
     return (
-        <View style={homeStyles.container}>
+        <View style={{ ...homeStyles.container, ...style }}>
             {children}
         </View>
     )
@@ -49,5 +49,6 @@ const homeStyles = StyleSheet.create({
         width: '100%',
         paddingHorizontal: 12,
         marginTop: getStatusBarHeight(),
+        backgroundColor: theme.colors.surface,
     },
 });
