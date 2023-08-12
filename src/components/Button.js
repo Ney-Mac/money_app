@@ -2,16 +2,16 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Button as PaperButton } from 'react-native-paper';
 import { theme } from '../themes/theme';
 
-export const Button = ({ mode, style, ...props }) => {
+export const Button = ({ mode, style, containerStyle, labelStyle, ...props }) => {
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={{ ...styles.button, ...containerStyle }}>
             <PaperButton
                 style={[
                     mode === 'outlined' && { backgroundColor: theme.colors.surface },
                     { borderRadius: 50 },
                     style,
                 ]}
-                labelStyle={styles.text}
+                labelStyle={{ ...styles.text, ...labelStyle }}
                 mode={mode}
                 {...props}
             />

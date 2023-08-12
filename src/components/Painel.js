@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 
-export const Painel = () => {
+export const Painel = ({ children }) => {
     return (
         <View style={styles.container}>
 

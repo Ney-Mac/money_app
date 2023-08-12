@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { Text, TextInput as Input } from "react-native-paper";
 import { theme } from "../themes/theme";
 
-export const TextInput = ({ description, errorText, secureTextEntry, ...props }) => {
+export const TextInput = ({ description, mode = "outlined", errorText, secureTextEntry, ...props }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [active, setActive] = useState(false);
 
@@ -16,7 +16,7 @@ export const TextInput = ({ description, errorText, secureTextEntry, ...props })
                         outlineStyle={{ borderRadius: 50 }}
                         selectionColor={theme.colors.primary}
                         underlineColor="transparent"
-                        mode="outlined"
+                        mode={mode}
                         secureTextEntry={!showPassword}
                         onBlur={() => { setActive(false) }}
                         onFocus={() => { setActive(true) }}
@@ -33,7 +33,7 @@ export const TextInput = ({ description, errorText, secureTextEntry, ...props })
                         selectionColor={theme.colors.primary}
                         outlineStyle={{ borderRadius: 50 }}
                         underlineColor="transparent"
-                        mode="outlined"
+                        mode={mode}
                         {...props}
                     />
             }

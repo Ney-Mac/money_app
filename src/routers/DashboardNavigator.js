@@ -7,12 +7,13 @@ import SetPasswordScreen from "../screens/SetPasswordScreen";
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { theme } from "../themes/theme";
 
 const Tab = createBottomTabNavigator();
 
 const DashboardNavigator = ({ navigation }) => {
     return (
-        <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+        <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: theme.colors.primary }}>
             <Tab.Screen
                 name="Home"
                 component={HomeScreen}

@@ -51,6 +51,14 @@ const ProfileScreen = ({ navigation }) => {
                 Alterar senha
             </PaperButton>
 
+            <Button
+                mode='contained'
+                buttonColor="red"
+                onPress={() => { navigation.navigate('Login') }}
+            >
+                Terminar Sessão
+            </Button>
+
         </Background>
     )
 }
