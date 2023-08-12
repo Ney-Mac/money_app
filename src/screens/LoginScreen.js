@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
             />
 
             <View style={styles.rowForgot}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => { navigation.navigate('Recover') }}>
                     <Text style={styles.forgot}>Esqueceu sua senha?</Text>
                 </TouchableOpacity>
             </View>
