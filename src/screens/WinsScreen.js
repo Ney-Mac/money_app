@@ -41,7 +41,15 @@ const WinsScreen = ({ navigation }) => {
                         renderItem={({ item }) => (
                             <IconCard
                                 text={`Semana ${item.dia}/${item.mes}`}
-                                redirectTo={() => { navigation.navigate('Home') }}
+                                redirectTo={() => {
+                                    navigation.navigate(
+                                        'Detalhes Semanais',
+                                        {
+                                            dia: item.dia,
+                                            mes: item.mes
+                                        }
+                                    )
+                                }}
                             />
                         )}
                         keyExtractor={(item) => item.dia + '' + item.mes}

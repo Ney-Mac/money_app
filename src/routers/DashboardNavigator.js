@@ -4,6 +4,7 @@ import WinsScreen from "../screens/WinsScreen";
 import TransferirScreen from "../screens/TransferirScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SetPasswordScreen from "../screens/SetPasswordScreen";
+import DetailsScreen from "../screens/DetailsScreen";
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -13,7 +14,14 @@ const Tab = createBottomTabNavigator();
 
 const DashboardNavigator = ({ navigation }) => {
     return (
-        <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: theme.colors.primary }}>
+        <Tab.Navigator
+            initialRouteName="Home"
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: theme.colors.primary,
+            }}
+            backBehavior="history"
+        >
             <Tab.Screen
                 name="Home"
                 component={HomeScreen}
@@ -50,12 +58,21 @@ const DashboardNavigator = ({ navigation }) => {
                     )
                 }}
             />
-            <Tab.Screen 
+            <Tab.Screen
                 name="Alterar Senha"
                 component={SetPasswordScreen}
                 options={{
                     tabBarItemStyle: {
                         display: 'none'
+                    }
+                }}
+            />
+            <Tab.Screen
+                name="Detalhes Semanais"
+                component={DetailsScreen}
+                options={{
+                    tabBarItemStyle: {
+                        display: 'none',
                     }
                 }}
             />
