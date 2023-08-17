@@ -7,5 +7,6 @@ export const theme = {
         primary: '#ffd700',
         secondary: '#0055b3',
         error: '#ffd700',
+        soft: '#0079ff',
     }
 }

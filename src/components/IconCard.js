@@ -13,6 +13,7 @@ export const IconCard = ({ text, iconName = "arrow-right-circle-outline", redire
             <IconButton
                 icon={iconName}
                 size={36}
+                iconColor={theme.colors.secondary}
             />
         </TouchableOpacity>
     );
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     thinCard: {
         height: 72,
         width: '100%',
-        backgroundColor: 'aqua',
+        backgroundColor: theme.colors.primary,
         borderRadius: 50,
         flexDirection: 'row',
         overflow: 'hidden',
@@ -33,5 +34,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         paddingLeft: 12,
+        color: theme.colors.secondary,
     },
 })

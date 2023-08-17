@@ -6,6 +6,7 @@ import { Background } from "../components/Background";
 import { BackButton } from "../components/BackButton";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { Painel } from "../components/Painel";
+import { theme } from "../themes/theme";
 
 const DetailsScreen = ({ navigation }) => {
     const route = useRoute();
@@ -37,7 +38,7 @@ const DetailsScreen = ({ navigation }) => {
 
 const DiaDetail = ({ dia = '--', pontos = '--', diaSemana }) => {
     return (
-        <View style={styles.pontos}>
+        <View style={styles.diaDetail}>
             <Text
                 variant="bodyLarge"
                 style={styles.textHead}
@@ -61,11 +62,12 @@ const styles = StyleSheet.create({
         marginTop: getStatusBarHeight() + 36,
         marginBottom: 4,
     },
-    pontos: {
+    diaDetail: {
         height: 'auto',
         width: '100%',
         borderRadius: 8,
-        backgroundColor: 'pink',
+        borderColor: theme.colors.primary,
+        borderWidth: 1,
         justifyContent: 'center',
         paddingLeft: 8,
         paddingVertical: 4,
